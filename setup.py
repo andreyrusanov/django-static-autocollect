@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import os
 from setuptools import setup, find_packages
 
+with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
+    README = readme.read()
 
 setup(
     name='django-static-autocollect',
@@ -9,6 +12,7 @@ setup(
     url='https://github.com/andreyrusanov/django-static-autocollect',
     license='BSD',
     description='Runs collectstatic automatically.',
+    long_description=README,
     author='Andrey Rusanov',
     author_email='andrey@rusanov.me',
     packages=find_packages(),
