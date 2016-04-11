@@ -10,4 +10,4 @@ Quick start
         'static_autocollect',
     ]
 
-3. Run `python manage.py static_watch` to run static watcher.
+3. Run ``python manage.py watch_static`` to run static watcher.
