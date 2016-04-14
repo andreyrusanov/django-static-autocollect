@@ -1,18 +1,19 @@
 Sometimes with Django you need to collect static during development. It is really annoying to make it manually every time. 
 There are a few ways to handle it. 
-Static autocollect watches for changes in static files and runs ``collectstatic`` command for you automatically. 
+static_autocollect watches for changes in static files and runs ``collectstatic`` command for you automatically. 
 
 Quick start
 -----------
 
 1. Add "static_autocollect" to your INSTALLED_APPS:
-.. code:: python
+
+.. code-block:: python
 
     INSTALLED_APPS = [
         ...
         'static_autocollect',
-    ]
-    # or, since it is the app for development purposes only:
+    ]    
+    # or, since it is the app for development purposes only:   
     if DEBUG:
         INSTALLED_APPS.append('static_autocollect')
 
