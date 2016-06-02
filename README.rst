@@ -4,8 +4,10 @@ static_autocollect watches for changes in static files and runs ``collectstatic`
 
 Quick start
 -----------
+1. Install with pip:
+``pip install django-static-autocollect``
 
-1. Add "static_autocollect" to your INSTALLED_APPS:
+2. Add "static_autocollect" to your INSTALLED_APPS:
 
 .. code-block:: python
 
@@ -19,7 +21,7 @@ Quick start
 
 Peronally I just append it in my local settings to INSTALLED_APPS.
 
-2. Run ``python manage.py watch_static`` to run static watcher. It will show collectstatic output, so you will be able to see what exactly(and when) has been synced.
+3. Run ``python manage.py watch_static`` to run static watcher. It will show collectstatic output, so you will be able to see what exactly(and when) has been synced.
 
 
 The lib is working and quite stable already and I will update it with some tests and (perhaps) some minor features soon. 
