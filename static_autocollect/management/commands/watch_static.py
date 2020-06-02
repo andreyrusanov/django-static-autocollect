@@ -1,6 +1,8 @@
+import os.path
 import sys
 
 from django.contrib.staticfiles import finders
+from django.conf import settings
 from django.core.management import call_command
 from django.core.management.base import BaseCommand
 
@@ -19,6 +21,10 @@ class Command(BaseCommand):
 
         for path in roots:
             snapshots[path] = DirectorySnapshot(path)
+
+        if not os.path.exists(settings.STATIC_ROOT):
+            self.write('{} does not exist'.format(settings.STATIC_ROOT))
+            call_command('collectstatic', interactive=False)
 
         start_message = 'Directories to watch:\n{}'.format('\n'.join(roots))
         self.write(start_message)
